@@ -1,7 +1,16 @@
 # Example ShareX Server
- 
-## ShareX uploader config
-Set the key to what you set in .env
+Simple application to file sharing using ShareX
+
+## Setup
+
+```php
+$ cd example-sharex-server
+$ npm install
+$ node index.js
+```
+
+### ShareX uploader config
+Set the same key as you set in .env
 ```json
 {
     "DestinationType": "ImageUploader, FileUploader",
