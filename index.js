@@ -7,6 +7,8 @@ const path = require('path')
 const shortid = require('shortid')
 const fileUpload = require('express-fileupload')
 
+const { toDownload } = require('./config.json')
+
 const port = process.env.PORT || 3000
 
 app.use(fileUpload({
@@ -39,7 +41,7 @@ app.post('/upload', (req, res) => {
             return
         }
 
-        uploads.insert({ id: id, name: file.name }).then(function(u){
+        uploads.insert({ id: id, name: file.name, create_time: new Date().toLocaleString() }).then(function(u){
             res.send(`${process.env.URL}/${id}`)
         })
     })
@@ -52,7 +54,12 @@ app.get('/:id', (req, res) => {
             return
         }
 
-        res.download(path.join(__dirname, `storage/${result.name}`))
+        if (toDownload.includes(result.name.split('.')[1])) { // Files extensions to download
+            res.download(path.join(__dirname, `storage/${result.name}`))
+            return
+        }
+
+        res.sendFile(path.join(__dirname, `storage/${result.name}`))
     })
 })
 
