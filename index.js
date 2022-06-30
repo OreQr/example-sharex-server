@@ -52,7 +52,7 @@ app.get('/:id', (req, res) => {
             return
         }
 
-        res.sendFile(path.join(__dirname, `storage/${result.name}`))
+        res.download(path.join(__dirname, `storage/${result.name}`))
     })
 })
 
