@@ -2,3 +2,4 @@
 storage/
 uploads.json
 .env
+package-lock.json
