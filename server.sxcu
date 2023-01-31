@@ -1,0 +1,10 @@
+{
+  "DestinationType": "ImageUploader, FileUploader",
+  "RequestType": "POST",
+  "RequestURL": "http://localhost:3001/upload",
+  "FileFormName": "file",
+  "Arguments": {
+    "key": "[KEY]"
+  },
+  "ResponseType": "Text"
+}
