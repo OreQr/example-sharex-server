@@ -1,25 +1,29 @@
 # Example ShareX Server
-Simple application to file sharing using ShareX
+Simple application to file sharing using ShareX 📷
 
-## Setup
+## Installation
+### Requirements
+- node
+- npm
+- pm2 (to install `npm install pm2 -g`)
 
-```php
-$ cd example-sharex-server
-$ npm install
-$ node index.js
+Download from github
+```bash
+git clone https://github.com/oreqr/example-sharex-server.git
+
+cd example-sharex-server
+```
+Install modules
+```bash
+npm install
+```
+Replace `[KEY]` in config.json and server.sxcu for your own key
+
+Run the server
+```bash
+pm2 start "npm start" --name "sharex-server"
 ```
 
-### ShareX uploader config
-Set the same key as you set in .env
-```json
-{
-    "DestinationType": "ImageUploader, FileUploader",
-    "RequestType": "POST",
-    "RequestURL": "http://localhost:3001/upload",
-    "FileFormName": "file",
-    "Arguments": {
-        "key": "key"
-    },
-    "ResponseType": "Text"
-}
-```
+## License
+
+[MIT](https://github.com/OreQr/example-sharex-server/blob/main/LICENSE)

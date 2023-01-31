@@ -1,3 +1,8 @@
 {
-    "toDownload": ["rar", "zip"]
+  "port": 3001,
+  "url": "http://localhost:3001",
+  "redirect": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "max_size": "100MB",
+  "storage_path": "/storage",
+  "key": "[KEY]"
 }

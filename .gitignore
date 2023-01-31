@@ -1,5 +1,7 @@
 /node_modules
-storage/
-uploads.json
-.env
+/storage
+/dist
+config.json
+db.json
+server.sxcu
 package-lock.json
