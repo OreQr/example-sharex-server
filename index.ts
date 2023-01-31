@@ -31,6 +31,7 @@ app.use(
       fileSize: formatSize(max_size),
     },
     abortOnLimit: true,
+    useTempFiles: true,
   })
 );
 
